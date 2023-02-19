@@ -1,26 +1,26 @@
 <?php
 require_once 'Product.php';
+
 $product = new Product();
-$edit = $product->editProduct($_GET['pro_id']);
 $categories = $product->getCategories();
 $suppliers = $product->getSuppliers();
+$edit = $product->editProduct($_GET['pro_id']);
 
-$name = '';
-$supplier_id = '';
-$category_id = '';
-$unit = '';
-$price = '';
-$message = '';
-while($row = $edit->fetch_assoc())
-{
-    $id = $row['id'];
-    $name = $row['name'];
-    $supplier_id = $row['supplier_id'];
-    $category_id = $row['category_id'];
-    $unit = $row['unit'];
-    $price = $row['price'];
+    $name = '';
+    $supplier_id = '';
+    $category_id = '';
+    $unit = '';
+    $price = '';
+    $message = '';
+        while($row = $edit->fetch_assoc()){
+            $id = $row['id'];
+            $name = $row['name'];
+            $supplier_id = $row['supplier_id'];
+            $category_id = $row['category_id'];
+            $unit = $row['unit'];
+            $price = $row['price'];
 
-}
+        }
 
 ?>
 <div class="container">
@@ -52,9 +52,9 @@ while($row = $edit->fetch_assoc())
                                     <?php
                                     while ($rows = $suppliers->fetch_assoc())
                                     {
-                                        ?>
+                                    ?>
                                         <option value="<?php echo $rows['id']; ?>" <?php echo $rows['id']==$supplier_id?'selected':''; ?> ><?php echo $rows['name']; ?></option>
-                                        <?php
+                                    <?php
                                     }
                                     ?>
                                 </select>
@@ -68,10 +68,10 @@ while($row = $edit->fetch_assoc())
                                     <?php
                                     while ($rows = $categories->fetch_assoc())
                                     {
-                                        ?>
+                                    ?>
 
                                         <option value="<?php echo $rows['id']; ?>" <?php echo $rows['id']==$category_id?'selected':''; ?>><?php echo $rows['name']; ?></option>
-                                        <?php
+                                    <?php
                                     }
                                     ?>
                                 </select>
@@ -89,7 +89,6 @@ while($row = $edit->fetch_assoc())
                                 <input type="text" class="form-control" id="price" placeholder="Enter Price" name="price" value="<?php echo $price; ?>" required>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-default" name="btn">Update</button>

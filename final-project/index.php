@@ -1,17 +1,14 @@
 <?php
 session_start();
-if($_SESSION['email']==null && $_SESSION['password']==null)
-{
-    header('location:login.php');
-}
-?>
 
+    if($_SESSION['email']==null && $_SESSION['password']==null){
+        header('location:login.php');
+    }
+?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -19,7 +16,7 @@ if($_SESSION['email']==null && $_SESSION['password']==null)
 
     <!-- Core CSS - Include with every page -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+<!--    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet">-->
 <!--    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">-->
     <!-- Page-Level Plugin CSS - Dashboard -->
     <link href="assets/css/plugins/morris/morris-0.4.3.min.css" rel="stylesheet">
@@ -31,11 +28,8 @@ if($_SESSION['email']==null && $_SESSION['password']==null)
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 </head>
-
 <body>
-
     <div id="wrapper">
-
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-collapse">
@@ -44,14 +38,11 @@ if($_SESSION['email']==null && $_SESSION['password']==null)
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php">CMPI | Dashboard</a>
+                <a class="navbar-brand" href="index.php">Stock Management | Dashboard</a>
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right"
-
-
-
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -64,7 +55,7 @@ if($_SESSION['email']==null && $_SESSION['password']==null)
                             <form class="form-horizontal" action="logout.php" method="post">
 <!--                               <a><i class="fa fa-sign-out fa-fw"></i><input type="submit" name="logout" value="Logout"></a>-->
 
-                            <button class="center-block" name="logout"><i class="fa fa-sign-out fa-fw"></i>Logout</button>
+                            <button class="center-block" name="logout"><i class="fa fa-sign-out"></i>Logout</button>
                             </form>
 <!--                            <a href="logout.php"><i class="fa fa-sign-out fa-fw"></i> Logout</a>-->
                         </li>
@@ -78,12 +69,11 @@ if($_SESSION['email']==null && $_SESSION['password']==null)
             <div class="navbar-default navbar-static-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="side-menu">
-
                         <li>
                             <a href="index.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sign-out fa-fw"></i> Category <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-sign-out"></i> Category <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="index.php?id=add-category"><i class="fa fa-edit"></i> Add Category</a>
@@ -167,10 +157,6 @@ if($_SESSION['email']==null && $_SESSION['password']==null)
                             <!-- /.nav-second-level -->
                         </li>
 
-
-
-
-
                     </ul>
                     <!-- /#side-menu -->
                 </div>
@@ -195,7 +181,6 @@ if($_SESSION['email']==null && $_SESSION['password']==null)
             <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
-
     </div>
     <!-- /#wrapper -->
 
@@ -215,5 +200,4 @@ if($_SESSION['email']==null && $_SESSION['password']==null)
     <script src="assets/js/demo/dashboard-demo.js"></script>
 
 </body>
-
 </html>

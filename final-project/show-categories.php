@@ -3,21 +3,13 @@ require_once 'Category.php';
 
 $message = '';
 $category = new Category();
+$categories = $category->getCategories();
 if(isset($_POST['btn']))
 {
     $message = $category->updateCategory($_POST);
 }
-$categories = $category->getCategories();
-
 ?>
-<!--<div class="well">-->
-<!--    <h2 class="text-center text-success">-->
-<!--        --><?php //echo $message; ?>
-<!--    </h2>-->
-<!--</div>-->
-<!--<div class="panel-heading">-->
-<!--    Add Category-->
-<!--</div>-->
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -49,8 +41,8 @@ $categories = $category->getCategories();
                     <td><?php echo $rows['name']; ?></td>
                     <td><?php echo $rows['description']; ?></td>
                         <td>
-                            <a class="btn btn-primary" href="index.php?id=edit-category&cat_id=<?php echo $rows['id']; ?>" ><span class="glyphicon glyphicon-edit"></span> </a>
-                            <a class="btn btn-danger" href="index.php?id=delete-category&cat_id=<?php echo $rows['id']; ?>" ><span class="glyphicon glyphicon-trash"></span> </a>
+                            <a class="btn btn-primary" href="index.php?id=edit-category&cat_id=<?php echo $rows['id']; ?>" ><span class="glyphicon glyphicon-edit"></span></a>
+                            <a class="btn btn-danger" href="index.php?id=delete-category&cat_id=<?php echo $rows['id']; ?>" ><span class="glyphicon glyphicon-trash"></span></a>
                         </td>
                     </tr>
                     <?php

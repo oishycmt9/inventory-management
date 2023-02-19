@@ -1,25 +1,26 @@
 <?php
 require_once 'Employee.php';
+
 $employee = new Employee();
 $edit = $employee->editEmployee($_GET['emp_id']);
 
-$name = '';
-$contact = '';
-$dob = '';
-$photo_url = '';
-$notes = '';
-$message = '';
-while($row = $edit->fetch_assoc())
-{
-    $id = $row['id'];
-    $name = $row['name'];
-    $contact = $row['contact'];
-    $dob = $row['dob'];
-    $photo_url = $row['photo_url'];
-    $notes = $row['notes'];
+    $name = '';
+    $contact = '';
+    $dob = '';
+    $photo_url = '';
+    $notes = '';
+    $message = '';
+        while($row = $edit->fetch_assoc()){
+            $id = $row['id'];
+            $name = $row['name'];
+            $contact = $row['contact'];
+            $dob = $row['dob'];
+            $photo_url = $row['photo_url'];
+            $notes = $row['notes'];
 
-}
+        }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -57,7 +58,6 @@ while($row = $edit->fetch_assoc())
                             <label class="control-label col-sm-2" for="photo_url">Photo:</label>
                             <div class="col-sm-10">
                                 <input type="file" class="form-control-file" id="photo_url" name="photo_url" autocomplete="photo_url">
-<!--                                <input type="hidden" class="form-control-file" id="pre_photo_url" value="--><?php //echo $photo_url; ?><!--" name="pre_photo_url" autocomplete="pre_photo_url">-->
                                 <img src="<?php echo $photo_url; ?>" style="height: 40px; width: 40px; border-radius: 50%;">
                             </div>
                         </div>
@@ -67,7 +67,6 @@ while($row = $edit->fetch_assoc())
                                 <textarea type="text" class="form-control" id="notes" placeholder="Enter Employee Details" name="notes"  required><?php echo $notes; ?></textarea>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-default" name="btn">Update</button>

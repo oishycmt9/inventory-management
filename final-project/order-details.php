@@ -1,15 +1,16 @@
 <?php
 require_once 'OrderDetails.php';
+
 $message = '';
 $orderDetails = new OrderDetails();
-if(isset($_POST['btn']))
-{
-    $message = $orderDetails->save($_POST);
-}
 $orders = $orderDetails->getOrders();
 $products = $orderDetails->getProducts();
 
+    if(isset($_POST['btn'])){
+        $message = $orderDetails->save($_POST);
+    }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -32,9 +33,9 @@ $products = $orderDetails->getProducts();
                                     <?php
                                     while ($rows = $orders->fetch_assoc())
                                     {
-                                        ?>
+                                    ?>
                                         <option value="<?php echo $rows['id']; ?>"><?php echo $rows['id']; ?></option>
-                                        <?php
+                                    <?php
                                     }
                                     ?>
                                 </select>
@@ -48,15 +49,14 @@ $products = $orderDetails->getProducts();
                                     <?php
                                     while ($rows = $products->fetch_assoc())
                                     {
-                                        ?>
+                                    ?>
                                         <option value="<?php echo $rows['id']; ?>"><?php echo $rows['name']; ?></option>
-                                        <?php
+                                    <?php
                                     }
                                     ?>
                                 </select>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label class="control-label col-sm-2" for="quantity">Quantity:</label>
                             <div class="col-sm-10">
@@ -68,8 +68,6 @@ $products = $orderDetails->getProducts();
                                 <button type="submit" class="btn btn-default" name="btn">Save</button>
                             </div>
                         </div>
-
-
                     </form>
                 </div>
             </div>

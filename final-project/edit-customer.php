@@ -1,28 +1,27 @@
 <?php
 require_once 'Customer.php';
+
 $customer = new Customer();
 $edit = $customer->editCustomer($_GET['cus_id']);
 
-$name = '';
-$contact = '';
-$address = '';
-$city = '';
-$postal_code = '';
-$country = '';
-$message = '';
-while($row = $edit->fetch_assoc())
-{
-    $id = $row['id'];
-    $name = $row['name'];
-    $contact = $row['contact'];
-    $address = $row['address'];
-    $city = $row['city'];
-    $postal_code = $row['postal_code'];
-    $country = $row['country'];
-
-}
-
+    $name = '';
+    $contact = '';
+    $address = '';
+    $city = '';
+    $postal_code = '';
+    $country = '';
+    $message = '';
+        while($row = $edit->fetch_assoc()){
+            $id = $row['id'];
+            $name = $row['name'];
+            $contact = $row['contact'];
+            $address = $row['address'];
+            $city = $row['city'];
+            $postal_code = $row['postal_code'];
+            $country = $row['country'];
+        }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">

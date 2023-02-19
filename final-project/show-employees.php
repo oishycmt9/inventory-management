@@ -3,24 +3,23 @@ require_once 'Employee.php';
 
 $message = '';
 $employee = new Employee();
+$employees = $employee->getEmployees();
 if(isset($_POST['btn']))
 {
     $message = $employee->updateEmployee($_POST, $_FILES);
 }
-$employees = $employee->getEmployees();
+
 ?>
 <div class="container">
     <div class="row">
         <div class="col-md-11">
             <div class="panel-heading">
-<!--                print_r($message)-->
                 <h2 class="text-center text-success">
                     <?php echo $message ; ?>
                 </h2>
             </div>
             <div class="well">
                 <h3 class="text-center">All Employees</h3>
-
             </div>
             <table class="table table-sm table-striped">
                 <thead class="bg-primary">

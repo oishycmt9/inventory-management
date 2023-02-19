@@ -3,11 +3,11 @@ require_once 'Supplier.php';
 
 $message = '';
 $supplier = new Supplier();
+$suppliers = $supplier->getSuppliers();
 if(isset($_POST['btn']))
 {
     $message = $supplier->updateSupplier($_POST);
 }
-$suppliers = $supplier->getSuppliers();
 ?>
 <div class="container">
     <div class="row">

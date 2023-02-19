@@ -2,31 +2,27 @@
 session_start();
 require_once 'Connection.php';
 $message = "";
-if(isset($_POST['btn']))
-{
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $con = new Connection(); 
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
-    $result = mysqli_query($con->connect(),$sql);
-    if($result->num_rows>0)
-    {
-//        $message = "Logged In" ;
-        $_SESSION['email'] = $email;
-        $_SESSION['password'] = $password;
-        header('location:index.php');
-    }
-    else{
-        $message ="Email or Password does not match".$con->connect()->error;
-    }
 
-}
+    if(isset($_POST['btn'])){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
+        $con = new Connection(); 
+        $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+        $result = mysqli_query($con->connect(),$sql);
+
+            if($result->num_rows>0){
+                $_SESSION['email'] = $email;
+                $_SESSION['password'] = $password;
+                header('location:index.php');
+            }else{
+                $message ="Email or Password does not match".$con->connect()->error;
+            }
+    }
 ?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
 
     <meta charset="utf-8">
@@ -42,9 +38,7 @@ if(isset($_POST['btn']))
     <link href="assets/css/sb-admin.css" rel="stylesheet">
 
 </head>
-
 <body>
-
 <div class="container">
     <div class="row" style="background-image: ">
         <div class="col-md-4 col-md-offset-4">

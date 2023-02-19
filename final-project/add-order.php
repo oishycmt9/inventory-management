@@ -1,15 +1,17 @@
 <?php
 require_once 'Order.php';
+
 $message = '';
 $order = new Order();
-if(isset($_POST['btn']))
-{
-    $message = $order->save($_POST);
-}
 $customers = $order->getCustomers();
 $employees = $order->getEmployees();
 $shippers = $order->getShippers();
+
+    if(isset($_POST['btn'])){
+        $message = $order->save($_POST);
+    }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -17,7 +19,7 @@ $shippers = $order->getShippers();
                 <h5 class="text-center text-success">
                     <?php if($message!=null)
                     {
-                       ?>
+                    ?>
                         <a href="index.php?id=order-details">Add Product</a>
                     <?php
                     }
@@ -54,9 +56,9 @@ $shippers = $order->getShippers();
                                     <?php
                                     while ($rows = $employees->fetch_assoc())
                                     {
-                                        ?>
+                                    ?>
                                         <option value="<?php echo $rows['id']; ?>"><?php echo $rows['name']; ?></option>
-                                        <?php
+                                    <?php
                                     }
                                     ?>
                                 </select>
@@ -70,9 +72,9 @@ $shippers = $order->getShippers();
                                     <?php
                                     while ($rows = $shippers->fetch_assoc())
                                     {
-                                        ?>
+                                    ?>
                                         <option value="<?php echo $rows['id']; ?>"><?php echo $rows['name']; ?></option>
-                                        <?php
+                                    <?php
                                     }
                                     ?>
                                 </select>
@@ -89,8 +91,6 @@ $shippers = $order->getShippers();
                                 <button type="submit" class="btn btn-default" name="btn">Save</button>
                             </div>
                         </div>
-
-
                     </form>
                 </div>
             </div>

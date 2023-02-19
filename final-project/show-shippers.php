@@ -3,11 +3,11 @@ require_once 'Shipper.php';
 
 $message = '';
 $shipper = new Shipper();
+$shippers = $shipper->getShippers();
 if(isset($_POST['btn']))
 {
     $message = $shipper->updateShipper($_POST);
 }
-$shippers = $shipper->getShippers();
 ?>
 <div class="container">
     <div class="row">
@@ -19,7 +19,6 @@ $shippers = $shipper->getShippers();
             </div>
             <div class="well">
                 <h3 class="text-center">All Shippers</h3>
-
             </div>
             <table class="table table-sm table-striped">
                 <thead class="bg-primary">

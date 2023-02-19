@@ -2,12 +2,13 @@
 require_once 'Employee.php';
 
 $message = '';
-if(isset($_POST['btn']))
-{
-    $employee = new Employee();
-    $message = $employee->save($_POST, $_FILES);
-}
+
+    if(isset($_POST['btn'])){
+        $employee = new Employee();
+        $message = $employee->save($_POST, $_FILES);
+    }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -52,7 +53,6 @@ if(isset($_POST['btn']))
                                 <textarea type="text" class="form-control-file" id="notes" placeholder="Enter Employee Details" name="notes" required></textarea>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-default" name="btn">Save</button>

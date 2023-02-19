@@ -1,20 +1,18 @@
 <?php
 require_once 'Category.php';
+
 $category = new Category();
 $edit = $category->editCategory($_GET['cat_id']);
 
     $name = '';
     $description = '';
     $message = '';
-    while($row = $edit->fetch_assoc())
-    {
-        $id = $row['id'];
-        $name = $row['name'];
-        $description = $row['description'];
 
-    }
-
-
+        while($row = $edit->fetch_assoc()){
+            $id = $row['id'];
+            $name = $row['name'];
+            $description = $row['description'];
+        }
 ?>
 
 <div class="container">
@@ -44,7 +42,6 @@ $edit = $category->editCategory($_GET['cat_id']);
                                 <textarea class="form-control" id="description" name="description"><?php echo $description; ?> </textarea>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-default" name="btn">Update</button>

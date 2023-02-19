@@ -3,11 +3,11 @@ require_once 'Customer.php';
 
 $message = '';
 $customer = new Customer();
+$customers = $customer->getCustomers();
 if(isset($_POST['btn']))
 {
     $message = $customer->updateCustomer($_POST);
 }
-$customers = $customer->getCustomers();
 ?>
 <div class="container">
     <div class="row">
@@ -19,7 +19,6 @@ $customers = $customer->getCustomers();
             </div>
             <div class="well">
                 <h3 class="text-center">All Customers</h3>
-
             </div>
             <table class="table table-sm table-striped">
                 <thead class="bg-primary">

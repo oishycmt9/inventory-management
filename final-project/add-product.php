@@ -2,17 +2,16 @@
 require_once 'Product.php';
 
 $message = '';
-$product = new Product();
-if(isset($_POST['btn']))
-{
-//    return print_r($_POST);
 
-      $message = $product->save($_POST);
-}
+$product = new Product();
 $categories = $product->getCategories();
 $suppliers = $product->getSuppliers();
 
+    if(isset($_POST['btn'])){
+        $message = $product->save($_POST);
+    }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -57,9 +56,9 @@ $suppliers = $product->getSuppliers();
                                     <?php
                                     while ($rows = $categories->fetch_assoc())
                                     {
-                                        ?>
+                                    ?>
                                         <option value="<?php echo $rows['id']; ?>"><?php echo $rows['name']; ?></option>
-                                        <?php
+                                    <?php
                                     }
                                     ?>
                                 </select>
@@ -77,7 +76,6 @@ $suppliers = $product->getSuppliers();
                                 <input type="text" class="form-control" id="price" placeholder="Enter Price" name="price" required>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-default" name="btn">Save</button>

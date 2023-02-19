@@ -2,7 +2,6 @@
 require_once 'OrderDetails.php';
 $orderDetails = new OrderDetails();
 $details = $orderDetails->getDetails($_GET['oid']);
-
 ?>
 <div class="container">
     <div class="row">
@@ -17,7 +16,6 @@ $details = $orderDetails->getDetails($_GET['oid']);
                     <th>Order ID</th>
                     <th>Product</th>
                     <th>Quantity</th>
-
                 </tr>
                 </thead>
                 <tbody>
@@ -30,7 +28,6 @@ $details = $orderDetails->getDetails($_GET['oid']);
                         <td><?php echo $rows['order_id']; ?></td>
                         <td><?php echo $rows['product']; ?></td>
                         <td><?php echo $rows['quantity']; ?></td>
-
                     </tr>
                     <?php
                 }

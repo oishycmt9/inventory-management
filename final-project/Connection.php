@@ -1,10 +1,8 @@
 <?php
+class Connection{
 
-class Connection
-{
-    public function connect()
-    {
-        $con = mysqli_connect('localhost','root','','cmpi_stock');
+    public function connect(){
+        $con = mysqli_connect('localhost','root','','stock');
         return $con;
     }
 }

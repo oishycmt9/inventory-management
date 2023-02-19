@@ -1,29 +1,29 @@
 <?php
 require_once 'Supplier.php';
+
 $supplier = new Supplier();
 $edit = $supplier->editSupplier($_GET['sup_id']);
 
-$name = '';
-$contact_name = '';
-$contact = '';
-$address = '';
-$city = '';
-$postal_code = '';
-$country = '';
-$message = '';
-while($row = $edit->fetch_assoc())
-{
-    $id = $row['id'];
-    $name = $row['name'];
-    $contact_name = $row['contact_name'];
-    $contact = $row['contact'];
-    $address = $row['address'];
-    $city = $row['city'];
-    $postal_code = $row['postal_code'];
-    $country = $row['country'];
-
-}
+    $name = '';
+    $contact_name = '';
+    $contact = '';
+    $address = '';
+    $city = '';
+    $postal_code = '';
+    $country = '';
+    $message = '';
+        while($row = $edit->fetch_assoc()){
+            $id = $row['id'];
+            $name = $row['name'];
+            $contact_name = $row['contact_name'];
+            $contact = $row['contact'];
+            $address = $row['address'];
+            $city = $row['city'];
+            $postal_code = $row['postal_code'];
+            $country = $row['country'];
+        }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">

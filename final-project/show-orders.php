@@ -35,7 +35,7 @@ $orders = $order->getOrders();
                         <td><?php echo $rows['order_date']; ?></td>
                         <td><?php echo $rows['shipper']; ?></td>
                         <td><a href="index.php?id=show-details&oid=<?php echo $rows['id']; ?>" >Order Details</a>
-                        <a class="btn btn-danger" href="index.php?id=delete-order&ord_id=<?php echo $rows['id']; ?>" ><span class="glyphicon glyphicon-trash"></span> </a></td>
+                        <a class="btn btn-danger" href="index.php?id=delete-order&ord_id=<?php echo $rows['id']; ?>" ><span class="glyphicon glyphicon-trash"></span></a></td>
                     </tr>
                     <?php
                 }

@@ -2,13 +2,12 @@
 require_once 'Category.php';
 
 $message = '';
-if(isset($_POST['btn']))
-{
-    $category = new Category();
-    $message = $category->save($_POST);
-}
-?>
 
+    if(isset($_POST['btn'])){
+        $category = new Category();
+        $message = $category->save($_POST);
+    }
+?>
 
 <div class="container">
     <div class="row">
@@ -36,7 +35,6 @@ if(isset($_POST['btn']))
                                 <textarea class="form-control" id="description" placeholder="Enter Description" name="description" required></textarea>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
                                 <button type="submit" class="btn btn-default" name="btn">Save</button>

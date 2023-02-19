@@ -2,12 +2,13 @@
 require_once 'Customer.php';
 
 $message = '';
-if(isset($_POST['btn']))
-{
-    $customer = new Customer();
-    $message = $customer->save($_POST);
-}
+
+    if(isset($_POST['btn'])){
+        $customer = new Customer();
+        $message = $customer->save($_POST);
+    }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">

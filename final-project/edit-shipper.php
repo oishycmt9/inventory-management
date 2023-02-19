@@ -1,19 +1,19 @@
 <?php
 require_once 'Shipper.php';
+
 $shipper = new Shipper();
 $edit = $shipper->editShipper($_GET['shi_id']);
 
-$name = '';
-$phone = '';
-$message = '';
-while($row = $edit->fetch_assoc())
-{
-    $id = $row['id'];
-    $name = $row['name'];
-    $phone = $row['phone'];
-
-}
+    $name = '';
+    $phone = '';
+    $message = '';
+        while($row = $edit->fetch_assoc()){
+            $id = $row['id'];
+            $name = $row['name'];
+            $phone = $row['phone'];
+        }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -22,7 +22,6 @@ while($row = $edit->fetch_assoc())
                     <?php echo $message; ?>
                 </h2>
             </div>
-
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Edit Shipper
@@ -45,7 +44,7 @@ while($row = $edit->fetch_assoc())
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-default" name="btn">Update</button>
                         </div>
-                </form>
+                    </form>
                 </div>
             </div>
         </div>

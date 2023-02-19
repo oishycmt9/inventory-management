@@ -1,13 +1,14 @@
 <?php
 require_once 'Shipper.php';
+
 $message = '';
-if(isset($_POST['btn']))
-{
-//    return print_r($_POST);
-    $shipper = new Shipper();
-    $message = $shipper->save($_POST);
-}
+
+    if(isset($_POST['btn'])){
+        $shipper = new Shipper();
+        $message = $shipper->save($_POST);
+    }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">
@@ -16,7 +17,6 @@ if(isset($_POST['btn']))
                     <?php echo $message; ?>
                 </h2>
             </div>
-
             <div class="panel panel-default">
                 <div class="panel-heading">
                     Add Shipper
@@ -38,7 +38,7 @@ if(isset($_POST['btn']))
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="submit" class="btn btn-default" name="btn">Save</button>
                         </div>
-                </form>
+                    </form>
                 </div>
             </div>
         </div>

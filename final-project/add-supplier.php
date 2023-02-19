@@ -1,15 +1,14 @@
 <?php
-
 require_once 'Supplier.php';
 
 $message = '';
-if(isset($_POST['btn']))
-{
-    $supplier = new Supplier();
-    $message = $supplier->save($_POST);
-}
 
+    if(isset($_POST['btn'])){
+        $supplier = new Supplier();
+        $message = $supplier->save($_POST);
+    }
 ?>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8">

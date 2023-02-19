@@ -3,11 +3,11 @@ require_once 'Product.php';
 
 $message = '';
 $product = new Product();
+$products = $product->getProducts();
 if(isset($_POST['btn']))
 {
     $message = $product->updateProduct($_POST);
 }
-$products = $product->getProducts();
 ?>
 <div class="container">
     <div class="row">
