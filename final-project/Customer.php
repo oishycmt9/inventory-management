@@ -16,11 +16,9 @@ class Customer{
         $sql = "INSERT INTO customers (name, contact, address, city, postal_code, country) VALUES('$name', '$contact', '$address', '$city', '$postal_code', '$country')";
         $result = mysqli_query($con->connect(),$sql);
 
-            if($result===true)
-            {
+            if($result===true){
                 return "Successfully Saved";
-            }
-            else{
+            }else{
                 return "Saving Failed!";
             }
     }
@@ -55,11 +53,11 @@ class Customer{
         $sql = "UPDATE customers SET name='$name',contact='$contact',address='$address',city='$city',postal_code='$postal_code',country='$country' WHERE id='$id'";
         $result = mysqli_query($con->connect(),$sql);
 
-        if($result===true){
-            return "Successfully Updated";
-        }else{
-            return "Updating Failed!";
-        }
+            if($result===true){
+                return "Successfully Updated";
+            }else{
+                return "Updating Failed!";
+            }
     }
 
     public function deleteCustomer($id){
