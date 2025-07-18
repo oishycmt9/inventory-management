@@ -1,5 +1,5 @@
 # inventory-management
-Live Site : https://inventory-management-byoishy.000webhostapp.com/
+Live Site : http://www.inventory-management.great-site.net
 
 Email : admin@gmail.com
 
